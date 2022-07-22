@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from nid.naver.com/login/ext/help_ip3.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 18 Jul 2022 05:17:03 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>네이버 :: 네이버 보안로그인 설정</title>
+<link rel="stylesheet" type="text/css" href="../css/security2.css" />
+<script type="text/javascript">
+/* cookie setting */
+function getCookie(name) {
+	var arg = name + "=";
+	var alen = arg.length;
+	var clen = document.cookie.length;
+	var i = 0;
+	while(i< clen){
+		var j = i + alen;
+		if(document.cookie.substring(i,j)==arg){
+			var end = document.cookie.indexOf(";",j);
+			if(end == -1)
+				end = document.cookie.length;
+			return unescape(document.cookie.substring(j,end));
+		}
+		i=document.cookie.indexOf(" ",i)+1;
+		if (i==0) break;
+	}
+	return null;
+}
+function initCookie() {
+    smart_level = getCookie("nid_slevel")?getCookie("nid_slevel"):1;
+    document.getElementById('lv').value = smart_level;
+    setLevel(document.getElementById('lv').value);
+}
+function setLevel(lv) {
+	document.getElementById("lv").value = lv;
+	if (lv == -1) {
+		document.getElementById("scr_ip1").checked = false;
+		document.getElementById("scr_ip2").checked = false;
+		document.getElementById("scr_ip3").checked = false;
+		document.getElementById("scr_ip_off").checked = true;
+	} else {
+		document.getElementById("scr_ip1").checked = false;
+		document.getElementById("scr_ip2").checked = false;
+		document.getElementById("scr_ip3").checked = false;
+		document.getElementById("scr_ip_off").checked = false;
+		try {
+			document.getElementById("scr_ip"+lv).checked = true;
+		} catch (e) {
+		}
+	}
+}
+function dosubmit() {
+	try {
+	if (document.getElementById("lv").value == -1) {
+		opener.ipCheckOff();
+	} else {
+		opener.ipCheckOn(document.getElementById("lv").value);
+	}
+	} catch (e) {}
+	try {
+	self.close();
+	} catch (e) {}
+}
+</script>
+</head>
+
+<body>
+<!-- 520*747 -->
+<div id="ip_security" class="wrap">
+
+<div id="header">
+	<h1><img src="../../../static.nid.naver.com/images/login/common/h_ip_security_set_v2.gif" alt="네이버 IP 보안 설정" width="136" height="20" /></h1>
+	<ul class="menu">
+	<li><a href="help_ip3.html"><img src="../../../static.nid.naver.com/images/login/common/tab_scr_ip_on_v2.gif" alt="IP보안" width="86" height="30" /></a></li>
+	</ul>
+</div>
+
+<div id="content">
+	<h2><img src="../../../static.nid.naver.com/images/login/common/h_ip_security.gif" alt="IP보안이란?" width="104" height="23" /></h2>
+	<p class="h2_desc"><img src="../../../static.nid.naver.com/images/login/common/p_ip_security.gif" title="" alt="IP주소정보의 사용범위를 사용자의 인터넷 접속환경에 맞게 3단계로 설정할 수 있도록 하여 타인이 로그인 권한을 가로채어 부정하게 사용하는 것을 방지하는, 사용성 및 보안성이 강화된 네이버 로그인상태 관리서비스입니다." width="363" height="47" /></p>
+	<fieldset class="set">
+		<h3><img src="../../../static.nid.naver.com/images/login/common/h_set_scr_ip.gif" alt="IP 보안 설정" width="60" height="15" /></h3>
+		<dl class="set_ip">
+		<dt class="s_on"><a href="javascript:setLevel(1);"><img src="../../../static.nid.naver.com/images/login/common/btn_on.gif" alt="On" width="18" height="10" /></a></dt>
+		<dd class="s_on">
+			<ul>
+			<li><input type="radio" id="scr_ip1" name="scr_ip" onClick="javascript:setLevel(1);" class="input_radio" /><label for="scr_ip1">IP보안 1단계 (보통)</label></li>
+			<li><input type="radio" id="scr_ip2" name="scr_ip" onClick="javascript:setLevel(2);" class="input_radio" /><label for="scr_ip2">IP보안 2단계 (높음)</label></li>
+			<li><input type="radio" id="scr_ip3" name="scr_ip" onClick="javascript:setLevel(3);" class="input_radio" /><label for="scr_ip3">IP보안 3단계 (안심)</label></li>
+			</ul>
+		</dd>
+		<dt class="s_off"><a href="javascript:setLevel(-1);"><img src="../../../static.nid.naver.com/images/login/common/btn_off.gif" alt="Off" width="24" height="10" /></a></dt>
+		<dd class="s_off"><input type="radio" id="scr_ip_off" name="scr_ip" onClick="javascript:setLevel(-1);" class="input_radio" /><label for="scr_ip_off">사용안함(OFF)</label></dd>
+		</dl>
+	</fieldset>
+	<ul class="desc desc2">
+	<li class="f">
+		<dl>
+		<dt><a href="javascript:setLevel(1);"><img src="../../../static.nid.naver.com/images/login/common/h_ip1.gif" alt="IP보안 1단계" width="38" height="33" /></a></dt>
+		<dd><span class="title">사용대상 - </span>유동 IP를 사용하는 일반 인터넷 사용자 (권장수준)</dd>
+		<dd><span class="title">보안효과 - </span>로그인 후 IP주소가 최근 로그인 시 IP주소들과 일정범위(C클래스)<br />까지 동일한 경우만 허용, <strong>멀리 떨어진 장소에서<br />로그인 권한을 부정사용 하는 것을 차단</strong></dd>
+		</dl>
+	</li>
+	<li>
+		<dl>
+		<dt><a href="javascript:setLevel(2);"><img src="../../../static.nid.naver.com/images/login/common/h_ip2.gif" alt="IP보안 2단계" width="38" height="33" /></a></dt>
+		<dd><span class="title">사용대상 - </span>유동 IP의 일반 인터넷에서 높은 수준의 IP보안을 원하는 사용자 </dd>
+		<dd><span class="title">보안효과 - </span><strong>로그인 후 IP주소가 최근 로그인 시 IP주소들과 동일한 경우만 <br />허용</strong>, 인터넷 접속중 IP주소 변경 시 사용자 재확인을 최소화하고, <br />3단계와 동일한 보안수준을 제공 </dd>
+		</dl>
+	</li>
+	<li>
+		<dl>
+		<dt><a href="javascript:setLevel(3);"><img src="../../../static.nid.naver.com/images/login/common/h_ip3.gif" alt="IP보안 3단계" width="38" height="33" /></a></dt>
+		<dd><span class="title">사용대상 - </span>인터넷 접속 중 IP주소가 변경되지 않는 사용자 </dd>
+		<dd><span class="title">보안효과 - </span><strong>로그인 후 IP주소가 변경되지 않는 경우만 허용</strong>, IP주소정보를 <br />사용한 최고의 보안수준을 제공 </dd>
+		</dl>
+	</li>
+	<li>
+		<dl>
+		<dt><a href="javascript:setLevel(-1);"><img src="../../../static.nid.naver.com/images/login/common/h_nouse.gif" alt="사용안함" width="48" height="14" /></a></dt>
+		<dd class="no_title">로그인 상태에서 IP주소가 자주 변경되는 사용자의 경우 선택.<br />단, IP보안 설정을 하지 않은 상태이므로 보안에 취약.</dd>
+		</dl>
+	</li>
+	</ul>
+	<div class="notice">
+		<p><span class="bu">*</span> 로그인 상태유지 설정 시 IP보안은 '사용안함'으로 변경되는 <br />점 유의해 주세요.</p>
+	</div>
+	<p class="btn_more"><a target="_blank" href="https://help.naver.com/support/contents/contents.nhn?serviceNo=532&amp;categoryNo=1521"><img src="../../../static.nid.naver.com/images/login/common/btn_more_help.gif" alt="추가 도움말 보기" width="96" height="18" /></a></p>
+</div>
+
+<div id="footer">
+	<input type="hidden" id="lv" name="lv">
+	<input type="submit" onClick="javascript:dosubmit();" value="확인" /> <button onClick="javascript:self.close();">취소</button>
+</div>
+
+</div>
+<script type="text/javascript">
+	initCookie();
+</script>
+</body>
+
+<!-- Mirrored from nid.naver.com/login/ext/help_ip3.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 18 Jul 2022 05:17:06 GMT -->
+</html>
+
+
+

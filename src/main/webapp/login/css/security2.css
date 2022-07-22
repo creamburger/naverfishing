@@ -1,0 +1,98 @@
+@charset "utf-8";
+/*
+NHN Web Standardization Team (http://html.nhndesign.com/) MJA 081022
+Target Browser : 
+*/
+
+/* Reset */
+*{margin:0;padding:0;}
+body{background-color:#fff;}
+body,th,td,input,textarea,select,button{font-size:11px;line-height:1.45em;font-family:"돋움",Dotum,"굴림",Gulim,AppleGothic,Sans-serif;color:#2f3743;}
+h1,h2,h3,h4,h5,h6{text-align:left;}
+img,fieldset{border:0;}
+li{list-style:none;}
+a{color:#383d41;text-decoration:none;}
+a:hover{color:#32a800;text-decoration:underline;}
+em,address{font-style:normal;}
+button,label,input{cursor:pointer;_cursor /**/:hand;}
+textarea{overflow:auto;}
+html:first-child select{height:20px;padding-right:6px;}
+option{padding-right:6px;}
+
+/* Common */
+.input_text, textarea{*margin:-1px 0;padding-right:1px;}
+.input_check, .input_radio{width:13px;height:13px;}
+.blind, hr{visibility:hidden;overflow:hidden;position:absolute;top:0;left:0;width:0;height:0;font-size:0;line-height:0;}
+.entry-title{display:none;}
+
+/* Layout */
+.wrap{position:relative; width:520px; height:747px; background-color:#f8f8f7;}
+#header{position:relative; height:51px; background:#3fae11 url(../../../static.nid.naver.com/images/login/bg_pop_header_v2.gif) repeat-x 0 0;}
+#content{margin:0 30px; padding-top:4px; background:url(../../../static.nid.naver.com/images/login/bg_security.gif) no-repeat 10px 29px;}
+#footer{position:absolute; left:0; bottom:0; width:100%; padding:14px 0 22px; border-top:1px solid #dfdfdf; background-color:#efefef; text-align:center;}
+#footer input,
+#footer button{margin:0 2px; padding:1px 2px 0; *padding-top:5px; font-size:1.1em; line-height:1.1em;}
+
+/* header */
+h1{padding:13px 0 0 28px;}
+.menu{position:absolute; right:29px; bottom:4px;}
+.menu li{float:left;}
+.menu img{vertical-align:top;}
+
+/* content */
+h2{margin:22px 0 0 83px;}
+.h2_desc{margin:6px 0 28px 83px;}
+.set_login{position:relative; width:76px; height:63px; top:13px; left:187px;}
+.set_login button{width:18px; height:12px;}
+.set_login .login_level{position:absolute; left:13px; top:22px; width:55px; height:15px; overflow:visible;}
+.set_login .login_level li{position:absolute; top:2px; left:0;}
+.set_login .login_level .level1{left:2px;}
+.set_login .login_level .level2{left:20px;}
+.set_login .login_level .level3{left:38px;}
+.set_login .login_level li a{display:block; width:19px; height:15px;}
+.set_login .login_level li.level_on{z-index:2;}
+.set_login .login_info{position:absolute; left:15px; top:2px;}
+.set_login .login_info li{display:none; position:absolute; top:0; left:0;}
+.step1 .level1 img,
+.step2 .level2 img,
+.step3 .level3 img,
+.step1 .info1,
+.step2 .info2,
+.step3 .info3{display:block !important;}
+.set{position:relative; width:458px; height:70px; margin:0 0 9px 1px; background:url(../../../static.nid.naver.com/images/login/bg_box.gif) no-repeat 0 0;}
+.set h3{position:absolute; left:28px; top:17px; height:36px; padding-right:28px; border-right:1px solid #dcdcdc;}
+.set h3 img{margin-top:9px;}
+.set_ip{padding:10px 0 0 120px; _padding-top:11px;}
+.set_ip dt, 
+.set_ip dd{float:left;}
+.set_ip dt{padding-right:9px; text-align:right;}
+.set_ip dt.s_on{width:33px;}
+.set_ip dd.s_on{width:122px;}
+.set_ip dt.s_off{width:40px;}
+.set_ip dd.s_off{width:110px;}
+.set_ip li{margin-bottom:2px; _margin-bottom:4px;}
+.set_ip .input_radio{vertical-align:middle;}
+.set_ip label{margin-left:3px; vertical-align:-1px;}
+
+.desc{letter-spacing:-1px;}
+.desc li{clear:both; background:url(../../../static.nid.naver.com/images/login/line_double.gif) repeat-x 0 0;}
+.desc .f{background:none;}
+.desc dl{padding:19px 0 12px; *padding-top:6px;}
+.desc dt{position:absolute; width:97px; margin-top:-3px; text-align:center;}
+.desc dd{padding:0 0 5px 164px;}
+.desc dd .title{position:absolute; margin-left:-53px; *margin-top:-2px;}
+.desc .no_title{padding-left:111px;}
+.desc strong{font-weight:normal; color:#1c9300;}
+.desc2{padding-top:10px;}
+.desc2 dl{padding:14px 0 7px; *padding-top:1px;}
+.desc2 dt{width:77px; margin-top:1px; text-align:left;}
+.desc2 dt img{margin-left:19px;}
+.desc2 dd{padding-left:137px;}
+.desc2 .no_title{padding-left:84px;}
+
+
+.notice{position:absolute; left:47px; bottom:79px; color:#848689; line-height:1.3em; letter-spacing:-1px;}
+.notice p{margin-top:4px;}
+.notice .bu{position:absolute; margin:0 0 0 -7px;}
+
+.btn_more{position:absolute; right:41px; bottom:78px;}
